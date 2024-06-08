@@ -1,20 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:location/location_service.dart';
 
-// Sample screens for demonstration purposes (replace with actual screens)
-class HistoryScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('History'),
-      ),
-      body: Center(
-        child: Text('This is the History Screen'),
-      ),
-    );
-  }
-}
+import 'History.dart';
+
+
 
 class LocationScreen extends StatefulWidget {
   @override
