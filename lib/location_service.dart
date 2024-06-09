@@ -41,12 +41,19 @@ class _MyAppState extends State<LocationService> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Latitude: $latitude'),
-              Text('Longitude: $longitude'),
+              Text('Latitude: $latitude', 
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+              SizedBox(height: 60,),
+              Text('Longitude: $longitude',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+              SizedBox(height: 100,),
               ElevatedButton(
                 onPressed: getCoordinates,
-                child: Text('Get Location'),
+                child: Text('Get Location Coordinates',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
               ),
+              Text("Wait for the coordinates to change",
+              style: TextStyle(color: Colors.red),)
             ],
           ),
         ),

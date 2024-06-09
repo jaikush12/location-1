@@ -81,7 +81,46 @@ class _HistoryScreenState extends State<HistoryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('History'),
+        backgroundColor: Color.fromARGB(227, 183, 120, 100),
+        foregroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(
+                bottom: Radius.circular(30),
+              ),
+            ),        
+        title: Column(
+          children: [
+            Text(
+              'History',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                fontSize: 20.0,
+                fontFamily: 'YourCustomFont',
+              ),
+            ),
+            Text(
+              'Click on the tile with information',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                fontSize: 14.0,
+                fontFamily: 'YourCustomFont',
+              ),
+            ),
+            Text(
+              'to open those coordinates in Maps',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                fontSize: 14.0,
+                fontFamily: 'YourCustomFont',
+              ),
+            ),
+          ],
+        ),
+        centerTitle: true,
+        toolbarHeight: 100.0,
       ),
       body: _locations.isEmpty
           ? Center(child: Text('No location history found.'))

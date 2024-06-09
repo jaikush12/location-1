@@ -15,26 +15,43 @@ class _LocationScreenState extends State<LocationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Location'),
+        backgroundColor: Color.fromARGB(227, 183, 120, 100),
+        foregroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(
+                bottom: Radius.circular(30),
+              ),
+            ),        
+        title: Text(
+          'Location',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+            fontSize: 20.0,
+            fontFamily: 'YourCustomFont',
+          ),
+        ),
+        centerTitle: true,
+        toolbarHeight: 50.0,
       ),
       body: LocationService()
     );
   }
 }
 
-class ProfileScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Profile'),
-      ),
-      body: Center(
-        child: Text('This is the Profile Screen'),
-      ),
-    );
-  }
-}
+// class ProfileScreen extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Profile'),
+//       ),
+//       body: Center(
+//         child: Text('This is the Profile Screen'),
+//       ),
+//     );
+//   }
+// }
 
 class NavigationBarPage extends StatefulWidget {
   @override
@@ -42,7 +59,7 @@ class NavigationBarPage extends StatefulWidget {
 }
 
 class _NavigationBarPageState extends State<NavigationBarPage> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
 
   void _onItemTapped(int index) {
     setState(() {
@@ -53,7 +70,7 @@ class _NavigationBarPageState extends State<NavigationBarPage> {
   final List<Widget> _screens = [
     HistoryScreen(),
     LocationScreen(),
-    ProfileScreen(),
+    // ProfileScreen(),
   ];
 
   @override
@@ -71,10 +88,10 @@ class _NavigationBarPageState extends State<NavigationBarPage> {
             icon: Icon(Icons.location_on),
             label: 'Location',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.person),
+          //   label: 'Profile',
+          // ),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.white,
